@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <div>
-        <input type="text" name="firstNumber">
-        <input type="text" name="secondNumber">
-        <button>Calc</button>
+        <form action="Works\Calc\result.txt">
+            <input type="text" name="firstNumber">
+            <select name="operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+            </select>
+            <input type="text" name="x2">
+            <input type="submit" value="Посчитать">
 
-        
+        </form>
     </div>
 
 
 </body>
+
 </html>
