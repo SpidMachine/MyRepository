@@ -11,52 +11,57 @@
 
     <ul>
         <?php
-
         $arrFile = scandir("file\\");
         $file = "file\\";
 
+       
+
+        // scandir — Получает список файлов и каталогов, расположенных по указанному пути
+        // is_dir — Определяет, является ли имя файла директорией
+
         foreach ($arrFile as $value) {
-            //  echo "<li>$value</li>";
-            if ($value != '.' && $value != '..') { // Убирает родительские папки(файлы)
-                if (is_dir($file . '/' . $value)) { // Является ли это папкой
-                    echo "<li><img src='images/folder.png>' width='16' height='16' . $value . </li>";
+
+
+            if ($value != '.' && $value != '..') { // убрали из списка родительские папки
+                if (is_dir($file . '/' . $value)) { // проверка по пути, или это папка или файл
+                    echo "<li>" .
+                    "<img src='images/folder.png' width='16' height='16'>" .
+                    "<a href='file\\$value'>$value</a>" .
+                    "<a href='delDir.php?file=$value'><img src='images/bin.png' width='12' height='12'></a>" .
+                    "</li>";
                 } else {
-                    switch (explode(".", $arr[$i])[1]) {
+                    switch (explode(".", $value)[1]) {
                         case 'docx':
-                            $icon = 'docx.png';
+                            $icon = 'doc.png';
                             break;
                         case 'pdf':
                             $icon = 'pdf.png';
                             break;
-                        default:
+                        case 'csv':
                             $icon = 'csv.png';
+                            break;
+                        case 'txt':
+                            $icon = 'txt.png';
+                            break;
+                        default:
+                            $icon = 'jpg.png';
                             break;
                     }
 
-                    echo "<li><img src='images/$icon' width'16' height='16'><a href='file\\$value'>$value</a></li>";
+                    $filesize = round((filesize("file\\$value")  / 1024) / 1024 , 3) . "Mb";
+
+                    echo "<li>" .
+                        "<img src='images/$icon' width='16' height='16'>" .
+                        "<a href='file\\$value'>$value</a>" . $filesize .
+                        "<a href='delLink.php?file=$value'><img src='images/bin.png' width='12' height='12'></a>" .
+                        "</li>";
                 }
             }
-        }
+        } // endforeach
 
-
-        // for ($i = 2; $i < count($arr); $i++) {
-        //     switch (explode(".", $arr[$i])[1]) {
-        //         case 'docx':
-        //             $icon = 'docx.png';
-        //             break;
-        //         case 'pdf':
-        //             $icon = 'pdf.png';
-        //             break;
-        //         default:
-        //             $icon = 'csv.png';
-        //             break;
-        //     }
-        //     echo "<a href='file\\$arr[$i]'><img src='$icon' width='16' height='16'>$arr[$i]</a><br >;";
-        // }
         ?>
-
     </ul>
 
 </body>
 
-</html>
+</html>S
