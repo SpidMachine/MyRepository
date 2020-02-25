@@ -33,26 +33,16 @@
                             break;
                     }
 
-                    echo "<li><img src='images/$icon' width'16' height='16'><a href='file\\$value'>$value</a></li>";
+                    echo "<li><img src='images/$icon' width'16' height='16'>" .
+                        "<a class='file' href='file\\$value'>$value</a>" .
+                        "<div class='size'>$filesize Mb</div>" .
+                        "<a href='delLink.php?file=$value'><img src='images/bin.png' width='12' height='12'</a>" .
+                        "<a href='renShow.php?name=$value'><img src='images/pen.png' width='12' height='12'</a>" .
+                        "<a href='redaction.php?name=$value'><img src='images/redact.png' width='12' height='12'</a>" .
+                        "</li>";
                 }
             }
         }
-
-
-        // for ($i = 2; $i < count($arr); $i++) {
-        //     switch (explode(".", $arr[$i])[1]) {
-        //         case 'docx':
-        //             $icon = 'docx.png';
-        //             break;
-        //         case 'pdf':
-        //             $icon = 'pdf.png';
-        //             break;
-        //         default:
-        //             $icon = 'csv.png';
-        //             break;
-        //     }
-        //     echo "<a href='file\\$arr[$i]'><img src='$icon' width='16' height='16'>$arr[$i]</a><br >;";
-        // }
         ?>
 
     </ul>
