@@ -11,9 +11,8 @@
     <form action="text.php" method="POST">
         <textarea name="text" cols="30" rows="10">
         <?= file_get_contents("file/$_GET[text]") ?>
-
     </textarea>
-
+    <input type="hidden" name="file">
 
     </form>
 
