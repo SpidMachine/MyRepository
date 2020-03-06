@@ -9,10 +9,7 @@
 
 <body>
     <form action="show.php" method="POST">
-        <textarea name="text" cols="30" rows="10">:):(:-):-(
-[b]Hello![/b]
-[i]Hello![/i]
-[u]Hello![/u]</textarea>
+        <textarea name="text" cols="30" rows="10"></textarea>
         <input type="submit" value="Отправить">
 
     </form>
