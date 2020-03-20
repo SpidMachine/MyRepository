@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 20 2020 г., 19:44
+-- Время создания: Мар 20 2020 г., 21:17
 -- Версия сервера: 5.6.41
 -- Версия PHP: 7.1.22
 
@@ -42,13 +42,14 @@ CREATE TABLE `customers` (
 -- Дамп данных таблицы `customers`
 --
 
-INSERT INTO `customers` VALUES(2001, 'Hoffman', 'London', 100, 1001);
-INSERT INTO `customers` VALUES(2002, 'Giovanni', 'Rome', 200, 1003);
-INSERT INTO `customers` VALUES(2003, 'Liu', 'SanJose', 200, 1002);
-INSERT INTO `customers` VALUES(2004, 'Grass', 'Berlin', 300, 1002);
-INSERT INTO `customers` VALUES(2006, 'Clemens', 'London', 100, 1001);
-INSERT INTO `customers` VALUES(2008, 'Cisneros', 'SanJose', 300, 1007);
-INSERT INTO `customers` VALUES(2007, 'Pereira', 'Rome', 100, 1004);
+INSERT INTO `customers` (`CNUM`, `CNAME`, `CITY`, `RATING`, `SNUM`) VALUES
+(2001, 'Hoffman', 'London', 100, 1001),
+(2002, 'Giovanni', 'Rome', 200, 1003),
+(2003, 'Liu', 'SanJose', 200, 1002),
+(2004, 'Grass', 'Berlin', 300, 1002),
+(2006, 'Clemens', 'London', 100, 1001),
+(2008, 'Cisneros', 'SanJose', 300, 1007),
+(2007, 'Pereira', 'Rome', 100, 1004);
 
 -- --------------------------------------------------------
 
@@ -68,16 +69,17 @@ CREATE TABLE `orders` (
 -- Дамп данных таблицы `orders`
 --
 
-INSERT INTO `orders` VALUES(3001, 18.69, '1990-03-10', 2008, 1007);
-INSERT INTO `orders` VALUES(3003, 767.19, '1990-03-10', 2001, 1007);
-INSERT INTO `orders` VALUES(3002, 1900.1, '1990-03-10', 2007, 1004);
-INSERT INTO `orders` VALUES(3005, 5160.45, '1990-03-10', 2003, 1002);
-INSERT INTO `orders` VALUES(3006, 1098.16, '1990-03-10', 2008, 1007);
-INSERT INTO `orders` VALUES(3009, 1713.23, '1990-04-10', 2002, 1003);
-INSERT INTO `orders` VALUES(3007, 75.75, '1990-04-10', 2004, 1002);
-INSERT INTO `orders` VALUES(3008, 4723, '1990-05-10', 2006, 1001);
-INSERT INTO `orders` VALUES(3010, 1309.95, '1990-06-10', 2004, 1002);
-INSERT INTO `orders` VALUES(3011, 9891.88, '1990-06-10', 2006, 1001);
+INSERT INTO `orders` (`ONUM`, `AMT`, `ODATE`, `CNUM`, `SNUM`) VALUES
+(3001, 18.69, '1990-03-10', 2008, 1007),
+(3003, 767.19, '1990-03-10', 2001, 1007),
+(3002, 1900.1, '1990-03-10', 2007, 1004),
+(3005, 5160.45, '1990-03-10', 2003, 1002),
+(3006, 1098.16, '1990-03-10', 2008, 1007),
+(3009, 1713.23, '1990-04-10', 2002, 1003),
+(3007, 75.75, '1990-04-10', 2004, 1002),
+(3008, 4723, '1990-05-10', 2006, 1001),
+(3010, 1309.95, '1990-06-10', 2004, 1002),
+(3011, 9891.88, '1990-06-10', 2006, 1001);
 
 -- --------------------------------------------------------
 
@@ -96,11 +98,12 @@ CREATE TABLE `salespeople` (
 -- Дамп данных таблицы `salespeople`
 --
 
-INSERT INTO `salespeople` VALUES(1001, 'Peel', 'London', 0.12);
-INSERT INTO `salespeople` VALUES(1002, 'Serres', 'San Jose', 0.13);
-INSERT INTO `salespeople` VALUES(1004, 'Motika', 'London', 0.11);
-INSERT INTO `salespeople` VALUES(1007, 'Rifkin', 'Barcelona', 15);
-INSERT INTO `salespeople` VALUES(1003, 'Axelrod', 'New York', 10);
+INSERT INTO `salespeople` (`SNUM`, `SNAME`, `CITY`, `COMM`) VALUES
+(1001, 'Peel', 'London', 0.12),
+(1002, 'Serres', 'San Jose', 0.13),
+(1004, 'Motika', 'London', 0.11),
+(1007, 'Rifkin', 'Barcelona', 15),
+(1003, 'Axelrod', 'New York', 10);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
