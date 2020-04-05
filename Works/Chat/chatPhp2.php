@@ -16,29 +16,11 @@
     <div class="cont">
 
         <?php
-
+        include("fun.php");
         $mess_arr = file("chat.txt");
 
         foreach ($mess_arr as $value) {
             echo "<div class='mess'>$value</div>";
-        }
-
-        function smile($strSmile)
-        {
-            $patSmile = array(
-                "/\:\-\)/",
-                "/\:\-\(/",
-                "/\:\)/",
-                "/\:\(/"
-            );
-        
-            $repSmile = array(
-                '<img src="images/smile.png">',
-                '<img src="images/sad.png">',
-                '<img src="images/smile.png">',
-                '<img src="images/sad.png">'
-            );
-            return preg_replace($patSmile, $repSmile, $strSmile);
         }
         ?>
 
