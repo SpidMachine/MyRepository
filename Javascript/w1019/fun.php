@@ -1,4 +1,3 @@
-
 <?php
 function bb_code($str)
 {
@@ -21,10 +20,8 @@ function bb_code($str)
 function smile($strSmile)
 {
     $patSmile = array(
-        "/\:\-\)/",
-        "/\:\-\(/",
-        "/\:\)/",
-        "/\:\(/"
+        "/\:-{0,1}\)/",
+        "/\:-{0,1}\(/"
     );
 
     $repSmile = array(
@@ -77,3 +74,6 @@ function url($strUrl)
     return preg_replace($regUrl, $repUrl, $strUrl);
 }
 
+function findWord($str)
+{
+}
